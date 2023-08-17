@@ -17,12 +17,20 @@
 
 1. De acuerdo con lo revisado en las lecturas, complete las clases CountThread, para que las mismas definan el ciclo de vida de un hilo que imprima por pantalla los números entre A y B.
 2. Complete el método __main__ de la clase CountMainThreads para que:
-	1. Cree 3 hilos de tipo CountThread, asignándole al primero el intervalo [0..99], al segundo [99..199], y al tercero [200..299].
-	2. Inicie los tres hilos con 'start()'.
-	3. Ejecute y revise la salida por pantalla. 
-	4. Cambie el incio con 'start()' por 'run()'. Cómo cambia la salida?, por qué?.
+	**1. Cree 3 hilos de tipo CountThread, asignándole al primero el intervalo [0..99], al segundo [99..199], y al tercero [200..299].**
+	**2. Inicie los tres hilos con 'start()'.**
+	**3. Ejecute y revise la salida por pantalla.**  
+   ![img_1.png](img_1.png)
+	**4. Cambie el incio con 'start()' por 'run()'. Cómo cambia la salida?.**
+   ![img_2.png](img_2.png)
+   
+   Cuando ejecutamos .start la salida de los numeros es de manera desordenada y aleatoria  
+   Cuando ejecutamos .run los números se muestran de manera ordenada  
+   **¿Por qué?**  
+	Porque cuando se utiliza el .run llama al metodo run que creamos en la clase CountThread el cual retorna los numeros en orden  
+	Por otro lado cuando ejecutamos el .start llama a un metodo de java que toma un espacio en el procesador, cada start crea un hilo, en este caso se estan ejecutando 4 al tiempo  
 
-**Parte II - Ejercicio Black List Search**
+  **Parte II - Ejercicio Black List Search**
 
 
 Para un software de vigilancia automática de seguridad informática se está desarrollando un componente encargado de validar las direcciones IP en varios miles de listas negras (de host maliciosos) conocidas, y reportar aquellas que existan en al menos cinco de dichas listas. 
