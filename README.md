@@ -21,9 +21,9 @@
 	**1. Cree 3 hilos de tipo CountThread, asignándole al primero el intervalo [0..99], al segundo [99..199], y al tercero [200..299].**
 	**2. Inicie los tres hilos con 'start()'.**
 	**3. Ejecute y revise la salida por pantalla.**  
-   ![img_1.png](img_1.png)
+   ![img_1.png](img/img_1.png)  
 	**4. Cambie el incio con 'start()' por 'run()'. Cómo cambia la salida?.**
-   ![img_2.png](img_2.png)
+   ![img_2.png](img/img_2.png)  
    
    Cuando ejecutamos .start la salida de los numeros es de manera desordenada y aleatoria  
    Cuando ejecutamos .run los números se muestran de manera ordenada  
@@ -65,11 +65,11 @@ Para 'refactorizar' este código, y hacer que explote la capacidad multi-núcleo
 
 	* Se sabe que el HOST 202.24.34.55 está reportado en listas negras de una forma más dispersa, y que el host 212.24.24.55 NO está en ninguna lista negra.  
    Con la IP 202.24.34.55  
-   ![img_3.png](img_3.png)  
-   ![img_4.png](img_4.png)  
+   ![img_3.png](img/img_3.png)  
+   ![img_4.png](img/img_4.png)  
    Con la IP 212.24.24.55  
-   ![img_5.png](img_5.png)  
-   ![img_6.png](img_6.png)
+   ![img_5.png](img/img_5.png)  
+   ![img_6.png](img/img_6.png)
    
 
 
@@ -82,27 +82,27 @@ La estrategia de paralelismo antes implementada es ineficiente en ciertos casos,
 A partir de lo anterior, implemente la siguiente secuencia de experimentos para realizar las validación de direcciones IP dispersas (por ejemplo 202.24.34.55), tomando los tiempos de ejecución de los mismos (asegúrese de hacerlos en la misma máquina):
 
 1. Un solo hilo.  
-![img_7.png](img_7.png)  
-![img_8.png](img_8.png)  
-![img_9.png](img_9.png)   
+![img_7.png](img/img_7.png)  
+![img_8.png](img/img_8.png)  
+![img_9.png](img/img_9.png)   
 2. Tantos hilos como núcleos de procesamiento (haga que el programa determine esto haciendo uso del [API Runtime](https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html)).(8)  
-![img_10.png](img_10.png)  
-![img_11.png](img_11.png)  
-![img_12.png](img_12.png)   
+![img_10.png](img/img_10.png)  
+![img_11.png](img/img_11.png)  
+![img_12.png](img/img_12.png)   
 3. Tantos hilos como el doble de núcleos de procesamiento. (16)    
-![img_13.png](img_13.png)  
-![img_14.png](img_14.png)   
+![img_13.png](img/img_13.png)  
+![img_14.png](img/img_14.png)   
 4. 50 hilos.  
-![img_15.png](img_15.png)  
-![img_16.png](img_16.png)  
+![img_15.png](img/img_15.png)  
+![img_16.png](img/img_16.png)  
 5. 100 hilos.  
-![img_17.png](img_17.png)  
-![img_18.png](img_18.png)   
+![img_17.png](img/img_17.png)  
+![img_18.png](img/img_18.png)   
 
 Al iniciar el programa ejecute el monitor jVisualVM, y a medida que corran las pruebas, revise y anote el consumo de CPU y de memoria en cada caso. ![](img/jvisualvm.png)
 
 Con lo anterior, y con los tiempos de ejecución dados, haga una gráfica de tiempo de solución vs. número de hilos. Analice y plantee hipótesis con su compañero para las siguientes preguntas (puede tener en cuenta lo reportado por jVisualVM):  
-![img_19.png](img_19.png)  
+![img_19.png](img/img_19.png)  
 
 **Parte IV - Ejercicio Black List Search**
 
