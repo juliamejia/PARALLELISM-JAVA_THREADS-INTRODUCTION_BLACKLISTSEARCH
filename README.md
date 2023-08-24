@@ -116,6 +116,9 @@ Por lo dicho anteriormente podemos concluir que, entre 200 y 500 hilos no hay un
    Usando la cantidad de nucleos del pc(8 en nuestro caso) duró un tiempo de 14 segundos y cuando los duplicamos el tiempo se redujo exactamente a la mitad, por lo que concluimos que usar mas hilos puede ser mas eficiente
 
 3. De acuerdo con lo anterior, si para este problema en lugar de 100 hilos en una sola CPU se pudiera usar 1 hilo en cada una de 100 máquinas hipotéticas, la ley de Amdahls se aplicaría mejor?. Si en lugar de esto se usaran c hilos en 100/c máquinas distribuidas (siendo c es el número de núcleos de dichas máquinas), se mejoraría?. Explique su respuesta.
+* Si tuvieramos 100 maquinas para que cada una ejecute un solo hilo, no estariamos aprovechando el procesador de los equipos. Quiza disminuya el tiempo de ejecucion pero no significativamente
+* Si usamos 100 equipos con n hilos por cada uno, podriamos observar un cambio significativo en el tiempo y en el uso de cada CPU ya que varias acciones se estan ejecutando al tiempo y esto reduciría la complejidad completa del problema 
+
 
 
 
