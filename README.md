@@ -1,6 +1,7 @@
 
 ### Escuela Colombiana de Ingeniería
 ### Arquitecturas de Software - ARSW
+#### Integrantes: Cristian Rodriguez y Julia Mejia
 ## Ejercicio Introducción al paralelismo - Hilos - Caso BlackListSearch
 
 
@@ -62,7 +63,14 @@ Para 'refactorizar' este código, y hacer que explote la capacidad multi-núcleo
 
 	* Dentro del método checkHost Se debe mantener el LOG que informa, antes de retornar el resultado, el número de listas negras revisadas VS. el número de listas negras total (línea 60). Se debe garantizar que dicha información sea verídica bajo el nuevo esquema de procesamiento en paralelo planteado.
 
-	* Se sabe que el HOST 202.24.34.55 está reportado en listas negras de una forma más dispersa, y que el host 212.24.24.55 NO está en ninguna lista negra.
+	* Se sabe que el HOST 202.24.34.55 está reportado en listas negras de una forma más dispersa, y que el host 212.24.24.55 NO está en ninguna lista negra.  
+   Con la IP 202.24.34.55  
+   ![img_3.png](img_3.png)  
+   ![img_4.png](img_4.png)  
+   Con la IP 212.24.24.55  
+   ![img_5.png](img_5.png)  
+   ![img_6.png](img_6.png)
+   
 
 
 **Parte II.I Para discutir la próxima clase (NO para implementar aún)**
@@ -73,21 +81,35 @@ La estrategia de paralelismo antes implementada es ineficiente en ciertos casos,
 
 A partir de lo anterior, implemente la siguiente secuencia de experimentos para realizar las validación de direcciones IP dispersas (por ejemplo 202.24.34.55), tomando los tiempos de ejecución de los mismos (asegúrese de hacerlos en la misma máquina):
 
-1. Un solo hilo.
-2. Tantos hilos como núcleos de procesamiento (haga que el programa determine esto haciendo uso del [API Runtime](https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html)).
-3. Tantos hilos como el doble de núcleos de procesamiento.
-4. 50 hilos.
-5. 100 hilos.
+1. Un solo hilo.  
+![img_7.png](img_7.png)  
+![img_8.png](img_8.png)  
+![img_9.png](img_9.png)   
+2. Tantos hilos como núcleos de procesamiento (haga que el programa determine esto haciendo uso del [API Runtime](https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html)).(8)  
+![img_10.png](img_10.png)  
+![img_11.png](img_11.png)  
+![img_12.png](img_12.png)   
+3. Tantos hilos como el doble de núcleos de procesamiento. (16)    
+![img_13.png](img_13.png)  
+![img_14.png](img_14.png)   
+4. 50 hilos.  
+![img_15.png](img_15.png)  
+![img_16.png](img_16.png)  
+5. 100 hilos.  
+![img_17.png](img_17.png)  
+![img_18.png](img_18.png)   
 
 Al iniciar el programa ejecute el monitor jVisualVM, y a medida que corran las pruebas, revise y anote el consumo de CPU y de memoria en cada caso. ![](img/jvisualvm.png)
 
 Con lo anterior, y con los tiempos de ejecución dados, haga una gráfica de tiempo de solución vs. número de hilos. Analice y plantee hipótesis con su compañero para las siguientes preguntas (puede tener en cuenta lo reportado por jVisualVM):
+![img_19.png](img_19.png)
 
 **Parte IV - Ejercicio Black List Search**
 
 1. Según la [ley de Amdahls](https://www.pugetsystems.com/labs/articles/Estimating-CPU-Performance-using-Amdahls-Law-619/#WhatisAmdahlsLaw?):
 
-	![](img/ahmdahls.png), donde _S(n)_ es el mejoramiento teórico del desempeño, _P_ la fracción paralelizable del algoritmo, y _n_ el número de hilos, a mayor _n_, mayor debería ser dicha mejora. Por qué el mejor desempeño no se logra con los 500 hilos?, cómo se compara este desempeño cuando se usan 200?. 
+	![](img/ahmdahls.png), donde _S(n)_ es el mejoramiento teórico del desempeño, _P_ la fracción paralelizable del algoritmo, y _n_ el número de hilos, a mayor _n_, mayor debería ser dicha mejora. Por qué el mejor desempeño no se logra con los 500 hilos?, cómo se compara este desempeño cuando se usan 200?.  
+
 
 2. Cómo se comporta la solución usando tantos hilos de procesamiento como núcleos comparado con el resultado de usar el doble de éste?.
 
